@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Produits - Maria et la Mode{% endblock %}
+
+
+{% block content %}
+    <!-- ***** Main Banner Area Start ***** -->
+        <div class="page-heading" id="top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="inner-content">
+                            <h2>Check Our Products</h2>
+                            <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="section" id="products">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-heading">
+                            <h2>Our Latest Products</h2>
+                            <span>Check out all of our products.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- ***** Main Banner Area End ***** -->
+            <div class="container">
+                <div class="row">
+                
+        {% for product in products %}
+                        
+        
+                                    
+                                    
+        {% endfor %}
+    
+                </div>
+             </div> 
+        </section>
+{% endblock %}

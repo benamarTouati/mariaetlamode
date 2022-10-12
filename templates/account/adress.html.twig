@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes adresses - Maria et la Mode{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <div class="container" style="margin-bottom: 150px"></div>
+    
+    <h1>Mes adresses</h1>
+    C'est dans cette espace que vous allez pouvoir gerer toutes vos adresses.
+    <br/><br/>
+    <div class="total">
+        <div class="main-border-button">
+            <a href="{{ path('account') }}">Retour</a>
+            <a href="{{ path('account_adress_add') }}">Ajouter une adresse</a>
+            
+        </div>
+        
+    </div>
+    <div class="espace" style="margin-top:75px"></div>  
+    </div>
+    
+    <div class="container">
+    {% if app.user.adresses|length == 0 %}
+        <p class="text-center">
+        Vous n'avez pas encore ajouté d'adresse dans votre compte client. Pour en ajouté une, veuillez <a href="{{ path('account_adress_add') }}">cliquer ici</a>
+        </p>
+    {% else %}
+        <div class="row">
+			{% for adress in app.user.adresses %}
+				<div class="col-md-4">
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">{{ adress.name }}</h5>
+							<p class="card-text">
+								{{ adress.adress }},<br>
+                                {{ adress.postal }} - {{ adress.city }} - {{ adress.country }}
+							</p>
+							<a href="{{ path('account_adress_edit', {'id' : adress.id }) }}">Modifier</a> | <a href="{{ path('account_adress_delete', {'id' : adress.id }) }}">Supprimer</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+        <div class="espace" style="margin-top:220px"></div>   
+    
+    </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mot de passe oublié - Maria et la Mode{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="container" style="margin-bottom: 150px"></div>
+<div class="block-small2" >
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-dark">{{ message }}</div>
+    {% endfor %}
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-dark">{{ message }}</div>
+    {% endfor %}
+    {{ form(form) }}
+</div>
+<div class="espace" style="margin-top:300px"></div>
+</div>
+{% endblock %}
+

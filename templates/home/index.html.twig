@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner" id="top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-content">
+                        <div class="thumb">
+                            <div class="inner-content">
+                                <h4>Maria et la Mode</h4>
+                                <span>Retrouvez l'ensemble de nos produits</span>
+                                <div class="main-border-button">
+                                    <a href="{{ path('products')}}">Acheter des à present</a>
+                                </div>
+                            </div>
+                            <img src="/import/accueil.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Femme</h4>
+                                            <span>La mode pour les Femmes</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Femme</h4>
+                                                <p>Le meilleur de la mode Femme vous attends.</p>
+                                            </div>
+                                        </div>
+                                        <img src="/import/femme-accueil.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Homme</h4>
+                                            <span>La mode pour les Hommes</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Homme</h4>
+                                                <p>Le meilleur de la mode Homme vous attends.</p>
+                                            </div>
+                                        </div>
+                                        <img src="/import/homme-accueil.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Enfant</h4>
+                                            <span>La mode pour les Enfants</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Enfant</h4>
+                                                <p>Le meilleur de la mode Enfant vous attends.</p>
+                                            </div>
+                                        </div>
+                                        <img src="/import/enfant-accueil.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Accessoire</h4>
+                                            <span>Nos future Accessoires bientot disponible</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Accessoire</h4>
+                                                <p>Coming soon</p>
+                                            </div>
+                                        </div>
+                                        <img src="/import/accessoire-accueil.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** Men Area Starts ***** -->
+    <section class="section" id="men">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-heading">
+                        <h2>Une selection de nos meilleures ventes.</h2>
+                        <span>Découvrez les articles les plus vendus.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+            {% for product in products %}
+                <div class="col-md-3">
+                    {% include 'product/single_product.html.twig' %}       
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- ***** Men Area Ends ***** -->
+
+
+    <!-- ***** Subscribe Area Starts ***** -->
+    <div class="subscribe">
+        <div class="container">
+            <div class="row">
+                
+                
+                        <div class="col-sm-6" style="text-align:center">
+                            <ul>
+                                <li>Notre Boutique:<br><span>128 av Jean Jaurès, 69002 Lyon, France</span></li>
+                                <li>Téléphone:<br><span>0472303030</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6" style="text-align:center">
+                            <ul>
+                                <li>Email:<br><span>mariaetlamonde@contact.fr</span></li>
+                                <li>Nos réseaux sociaux:<br><span><a href="https://www.facebook.com">Facebook</a>, <a href="https://www.instagram.com">Instagram</a>, <a href="https://www.twitter.com">Twitter</a>, <a href="https://www.linkedin.com">Linkedin</a></span></li>
+                            </ul>
+                        </div>
+                
+               
+            </div>
+        </div>
+    </div>
+    {% endblock %}

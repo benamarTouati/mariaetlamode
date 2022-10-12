@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Produits - Maria et la Mode{% endblock %}
+
+
+{% block content %}
+    <!-- ***** Main Banner Area Start ***** -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">   
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- ***** Main Banner Area End ***** -->
+        <div class="container mt-5">
+            <div class="row">
+		        <div class="col-md-3">
+                    <div class="item">
+                        <div class="down-content">
+                            <h3>Filtrer</h3>
+                            <hr>
+                        </div>
+                    </div>
+                        {{ form(form) }}
+		        </div>
+
+	            <div class="col-md-9">
+                    <div class="item">
+                        <div class="down-content">
+                            <h3>Nos produits</h3>
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+    {% for product in products %}
+                        <div class="col-lg-4">
+                            {% include 'product/single_product.html.twig' %}
+                        </div>        
+    {% endfor %}
+                </div>
+            </div>
+        </div> 
+    </section>
+{% endblock %}

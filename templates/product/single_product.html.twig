@@ -1,0 +1,16 @@
+<div class="item">
+    <div class="thumb">
+        <div class="hover-content">
+            <ul>
+                <li><a href="{{ path('product', { 'slug' : product.slug }) }}"><i class="fa fa-eye"></i></a></li>
+                <li><a href="{{ path('add_to_cart', {'id':product.id}) }}"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+            <img src="uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
+    </div>
+
+    <div class="down-content">
+        <h4>{{ product.name }}</h4>
+        <span>{{ (product.price / 100)|number_format(2,',','.') }} €</span>
+    </div>
+</div>    

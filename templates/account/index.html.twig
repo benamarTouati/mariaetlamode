@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte - Maria et la Mode{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <div class="container" style="margin-bottom: 150px"></div>
+    <h1>Mon compte</h1>
+    
+    {% if is_granted('ROLE_ADMIN') %}
+    <small><a href=" /admin">Vous êtes un administrateur, acceder au backoffice ?</a></small><br/>
+    <hr>
+    {% endif %}
+    Bienvenue {{ app.user.firstname }} dans votre compte.<br/> C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.<hr>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="account-item text-center">
+                
+                <a href=" {{ path('account_password') }}">Modifier mon mot de passe</a><br/><br/>
+                <img src="{{ asset('assets/img/password.png')}}" alt="Modifier mon mot de passe">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="account-item text-center">
+                
+                <a href=" {{ path('account_adress') }}">Gerer mes adresses</a><br/><br/>
+                <img src="{{ asset('assets/img/adress-book.png')}}" alt="Gerer mes adresses">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="account-item text-center">
+                
+                <a href=" {{ path('account_order') }}">Mes commandes</a><br/><br/>
+                <img src="{{ asset('assets/img/purchase.png')}}" alt="Mes commandes">
+            </div>
+        </div>
+    </div>
+    <div class="espace" style="margin-top:400px"></div>
+    </div>
+{% endblock %}
